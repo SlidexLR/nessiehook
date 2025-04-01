@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nessiehook</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #383434;
+      text-align: center;
+    }
+    h1 {
+      color: #000000;
+    }
+    p {
+      color: #000000;
+    }
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 50px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  #container {
+  padding: 20px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  text-align: center;
+}
+
+#container:hover {
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div id="container">
+  <h1>Nessiehook, the most revolutionary CS2 cheat!</h1>
+  <p>Nessiehook is a CS2 cheat that lets you use never before seen exploits! </p>
+  <p>Click the button below to join the discord server and get Nessiehook!</p>
+  <button id="link">Get Nessiehook</button>
+  </div>
+  <script>
+    document.getElementById("link").addEventListener("click", () => {
+      window.location.href = "https://discord.gg/hzFNnvQsPs";
+    });
+  </script>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+    <script type="module">
+      import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+      new fairyDustCursor();
+    </script>
+    <script>
+          document.querySelectorAll('.container').forEach(container => {
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            const rotateX = (-y / rect.height) * 30;
+            const rotateY = (x / rect.width) * 30;
+            container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        });
+    });
+    </script>
+</body>
+</html>
